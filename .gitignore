@@ -3,6 +3,7 @@ build
 .venv
 __pycache__
 poetry.lock
+*.exe
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
