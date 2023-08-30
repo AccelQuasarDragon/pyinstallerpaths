@@ -6,6 +6,7 @@ import sys
 import pathlib
 import os
 
+# https://kivy.org/doc/stable/guide/lang.html#special-syntax
 kvstring = '''
 #:import os os
 #:import sys sys
@@ -48,6 +49,8 @@ class NewBox(BoxLayout):
 class BasicApp(App):
     def build(self):
         return Builder.load_string(kvstring)
+    def on_request_close(self):
+        pass
   
 BasicApp().run()
 BasicApp().on_request_close()
