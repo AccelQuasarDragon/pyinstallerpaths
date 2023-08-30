@@ -10,16 +10,18 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 	Executable might be python exe (depending where u run it)
 	In pyinstaller: 
 		change in pyinstaller: move pyinstaller to different directory
-		show pyinstaller failing on different cwd
-		Cwd DEPENDS
+		show pyinstaller specfile failing on different cwd
+		cwd DEPENDS on your terminal!
 		So on windows cwd is your exe
-		On mac, it's the folder above(?)
+		On mac, it's the user folder
 		How MEIPASS relates to spec file, https://kivyschool.com/PyInstaller%20Instructions/#step-4b-add-your-kv-file-resources-hooks-and-hiddenimports
 #1.a: when making exe with pyinstaller, using specfile is DEPENDENT ON YOUR OS.GETCWD
     this is nontrivial in the sense that it's basic, but not something you think about
-    If i ask you what the cwd is for the spec file, you will say that it's the cwd of the terminal running it. Then if I ask you if the spec file can find the media folder, of course you can figure out the problem!
+
+    If i ask you what the cwd is for terminal running pyinstaller on the spec file, you will obviously know by looking at where your terminal is at. Then if I ask you if the command on the spec file can find the media folder, of course you can figure out if the terminal is in the right cwd!
     
 	BUT if you are just trying to create the exe from an automatically generated spec file you're not in the mindset to think about getcwd.
+
 #2: so where should I look/how should I look?
 sys.path + sys.executable + os.getcwd + sys._MEIPASS using rglob
 	almost fool proof search strategy: 
@@ -37,3 +39,5 @@ TL:DR:
 	#2: os.getcwd
 	#3: sys.executable
 	#4: sys._MEIPASS IF made with PyInstaller
+
+	If you want a decent solution, look through all 4 paths using rglob
