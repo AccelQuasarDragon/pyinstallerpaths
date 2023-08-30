@@ -4,6 +4,7 @@ build
 __pycache__
 poetry.lock
 .DS_Store
+*.exe
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
