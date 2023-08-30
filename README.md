@@ -14,6 +14,7 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		Cwd DEPENDS
 		So on windows cwd is your exe
 		On mac, it's the folder above(?)
+		How MEIPASS relates to spec file, https://kivyschool.com/PyInstaller%20Instructions/#step-4b-add-your-kv-file-resources-hooks-and-hiddenimports
 #1.a: when making exe with pyinstaller, using specfile is DEPENDENT ON YOUR OS.GETCWD
     this is nontrivial in the sense that it's basic, but not something you think about
     If i ask you what the cwd is for the spec file, you will say that it's the cwd of the terminal running it. Then if I ask you if the spec file can find the media folder, of course you can figure out the problem!
@@ -24,7 +25,7 @@ sys.path + sys.executable + os.getcwd + sys._MEIPASS using rglob
 	almost fool proof search strategy: 
 	rglob search through sys.path, os.getcwd and MEIPASS if it exists
     https://docs.python.org/3/library/pathlib.html#pathlib.Path.rglob
-
+#3: do the same for Mac
 TL:DR:
 	there are TWO ways to run a python file, 
 	#1: from terminal/ide
