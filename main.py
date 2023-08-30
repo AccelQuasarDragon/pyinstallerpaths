@@ -4,8 +4,8 @@ from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 import sys
-
-
+import pathlib
+import os
 
 kvstring = '''
 #:import os os
@@ -21,6 +21,9 @@ NewBox:
         text_size: self.width, None
     Label:
         text: root.meipasstest()
+    Label:
+        text: root.findfile()
+        text_size: self.width, None
 '''
 
 class NewBox(BoxLayout):
@@ -29,6 +32,19 @@ class NewBox(BoxLayout):
             return "sys._MEIPASS: " + str(sys._MEIPASS)
         else:
             return "no _MEIPASS found"
+    def findfile(*args):
+        solution = []
+        if hasattr(sys, "_MEIPASS"):
+            possiblepaths = sys.path+[os.getcwd(), sys._MEIPASS]
+        else:
+            possiblepaths = sys.path+[os.getcwd()]
+        for pathstr in possiblepaths:
+            tempsol = list(pathlib.Path(pathstr).rglob(os.path.join("findthis.py")))
+            solution += tempsol
+            if len(tempsol) > 0:
+                print("found ", solution, "in ", pathstr)
+        return str(solution)
+
 
 # Defining a class
 class MyFirstKivyApp(App):
