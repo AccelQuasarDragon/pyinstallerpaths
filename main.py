@@ -48,6 +48,10 @@ class NewBox(BoxLayout):
 
 class BasicApp(App):
     def build(self):
+        if hasattr(sys, "_MEIPASS"):
+            self.title = "RUNNING FROM PYINSTALLER"
+        else:
+            self.title = "RUNNING FROM TERMINAL"
         return Builder.load_string(kvstring)
     def on_request_close(self):
         pass

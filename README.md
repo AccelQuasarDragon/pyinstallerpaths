@@ -24,3 +24,15 @@ sys.path + sys.executable + os.getcwd + sys._MEIPASS using rglob
 	almost fool proof search strategy: 
 	rglob search through sys.path, os.getcwd and MEIPASS if it exists
     https://docs.python.org/3/library/pathlib.html#pathlib.Path.rglob
+
+TL:DR:
+	there are TWO ways to run a python file, 
+	#1: from terminal/ide
+	#2: as exe from PyInstaller
+	You must be wary that os.getcwd changes in your terminal depending on your terminal cwd. In PyInstaller, os.getcwd changes BETWEEN Windows and Mac
+
+	There are FOUR locations to look in for a file:
+	#1: sys.path 
+	#2: os.getcwd
+	#3: sys.executable
+	#4: sys._MEIPASS IF made with PyInstaller
