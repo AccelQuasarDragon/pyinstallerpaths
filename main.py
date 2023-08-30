@@ -43,6 +43,7 @@ class NewBox(BoxLayout):
             solution += tempsol
             if len(tempsol) > 0:
                 print("found ", solution, "in ", pathstr)
+                #reminder that os.getcwd is in path on windows
         return str(solution)
 
 
