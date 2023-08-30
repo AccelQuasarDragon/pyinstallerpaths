@@ -1,8 +1,8 @@
 # pyinstallerpaths
 Example of the INCREDIBLE amount of paths you have to think about on Win/Mac when using pyinstaller: os.getcwd, sys.path, sys.executable, sys._MEIPASS
 
-
 #0: go over the kivy code first
+
 #1: os.getcwd is different
 	In code: show os get cwd change depending on your terminal
         run 1: in pyinstallerpaths
