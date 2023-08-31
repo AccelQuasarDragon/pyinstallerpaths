@@ -50,7 +50,7 @@ TL:DR:
 	#1: from terminal/ide
 	#2: as exe from PyInstaller
 	You must be wary that os.getcwd changes in your terminal depending on your terminal cwd. In PyInstaller, os.getcwd changes BETWEEN Windows and Mac
-	on Windows it is your exe folder. On Mac it is your user folder.
+	on Windows it is your exe folder. On Mac it is your user folder (as a unix executable) or root / folder (as an .app).
 
 	There are FOUR locations to look in for a file:
 	#1: sys.path 
