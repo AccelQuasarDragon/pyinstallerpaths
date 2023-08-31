@@ -22,8 +22,8 @@ NewBox:
     Label:
         text: root.meipasstest()
     Label:
-        text: root.findfile()
-        text_size: self.width, None
+        # text: root.findfile()
+        # text_size: self.width, None
 '''
 
 class NewBox(BoxLayout):

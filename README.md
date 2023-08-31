@@ -31,6 +31,7 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		https://docs.python.org/3/library/pathlib.html#pathlib.Path.rglob
 
 #3: do the same for Mac
+Mac specific problem: unix executable works for .app is prevented from looking at network folders
 TL:DR:
 	there are TWO ways to run a python file, 
 	#1: from terminal/ide
