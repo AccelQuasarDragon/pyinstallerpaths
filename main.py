@@ -27,6 +27,9 @@ NewBox:
     Label:
         text: root.filespeaker()
         text_size: self.width, None
+    Label:
+        text: root.filespeaker2()
+        text_size: self.width, None
 '''
 
 class NewBox(BoxLayout):
@@ -60,7 +63,9 @@ class NewBox(BoxLayout):
                 #reminder that os.getcwd is in path on windows
         return str(solution)
     def filespeaker(*args):
-        return "__file__: " +str(__file__), "os.path.dirname(__file__) :", str(os.path.dirname(__file__))
+        return "__file__: " +str(__file__) 
+    def filespeaker2(*args):
+        return "os.path.dirname(__file__) :" + str(os.path.dirname(__file__))
 
 class BasicApp(App):
     def build(self):
