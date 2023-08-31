@@ -24,6 +24,9 @@ NewBox:
     Label:
         text: root.findfile()
         text_size: self.width, None
+    Label:
+        text: root.filespeaker()
+        text_size: self.width, None
 '''
 
 class NewBox(BoxLayout):
@@ -48,7 +51,7 @@ class NewBox(BoxLayout):
                 possiblepaths = possiblepaths+sys.path+[sys._MEIPASS]
             else:
                 possiblepaths = possiblepaths+sys.path+[]
-            
+
         for pathstr in possiblepaths:
             tempsol = list(pathlib.Path(pathstr).rglob(os.path.join("findthis.py")))
             solution += tempsol
@@ -56,6 +59,8 @@ class NewBox(BoxLayout):
                 print("found ", solution, "in ", pathstr)
                 #reminder that os.getcwd is in path on windows
         return str(solution)
+    def filespeaker(*args):
+        return str(__file__)
 
 class BasicApp(App):
     def build(self):

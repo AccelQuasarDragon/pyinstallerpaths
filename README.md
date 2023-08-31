@@ -39,6 +39,11 @@ what is bad: os.getcwd
 
 WHAT, getcwd on pyinstaller .app on mac is / which is the root folder
 but getcwd on pyinstaller which is a unix executable is user folder
+so u can't use getcwd on .app
+
+another location i forgot to mention is __file__
+
+
 
 TL:DR:
 	there are TWO ways to run a python file, 
