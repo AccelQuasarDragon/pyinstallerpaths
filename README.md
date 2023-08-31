@@ -52,10 +52,11 @@ TL:DR:
 	You must be wary that os.getcwd changes in your terminal depending on your terminal cwd. In PyInstaller, os.getcwd changes BETWEEN Windows and Mac
 	on Windows it is your exe folder. On Mac it is your user folder (as a unix executable) or root / folder (as an .app).
 
-	There are FOUR locations to look in for a file:
+	There are FIVE locations to look in for a file:
 	#1: sys.path 
 	#2: os.getcwd
 	#3: sys.executable
 	#4: sys._MEIPASS IF made with PyInstaller
+	#5: __file__/ os.path.dirname(__file__)
 
 	If you want a decent solution, look through all 4 paths using rglob. If you want a fast solution, just add sys._MEIPASS to sys.path. But be careful! the _MEIPASS folder is a temp folder, and will not persist between runs.
