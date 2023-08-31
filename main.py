@@ -60,7 +60,7 @@ class NewBox(BoxLayout):
                 #reminder that os.getcwd is in path on windows
         return str(solution)
     def filespeaker(*args):
-        return str(__file__)
+        return "__file__: " +str(__file__)
 
 class BasicApp(App):
     def build(self):
