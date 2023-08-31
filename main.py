@@ -22,8 +22,8 @@ NewBox:
     Label:
         text: root.meipasstest()
     Label:
-        # text: root.findfile()
-        # text_size: self.width, None
+        text: root.findfile()
+        text_size: self.width, None
 '''
 
 class NewBox(BoxLayout):
@@ -38,6 +38,17 @@ class NewBox(BoxLayout):
             possiblepaths = sys.path+[os.getcwd(), sys._MEIPASS]
         else:
             possiblepaths = sys.path+[os.getcwd()]
+        if sys.platform == "darwin":
+            #filter out sys.path because of network permissions on network drives
+            # print("possiblepaths", possiblepaths)
+            # possiblepaths = [safepath for safepath in possiblepaths if safepath not in sys.path]
+            # print("sys.path", sys.path)
+            possiblepaths = []
+            if hasattr(sys, "_MEIPASS"):
+                possiblepaths = possiblepaths+sys.path+[sys._MEIPASS]
+            else:
+                possiblepaths = possiblepaths+sys.path+[]
+            
         for pathstr in possiblepaths:
             tempsol = list(pathlib.Path(pathstr).rglob(os.path.join("findthis.py")))
             solution += tempsol

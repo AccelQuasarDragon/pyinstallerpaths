@@ -32,6 +32,14 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 
 #3: do the same for Mac
 Mac specific problem: unix executable works for .app is prevented from looking at network folders
+new location: __file__
+
+what is bad: os.getcwd
+
+
+WHAT, getcwd on pyinstaller .app on mac is / which is the root folder
+but getcwd on pyinstaller which is a unix executable is user folder
+
 TL:DR:
 	there are TWO ways to run a python file, 
 	#1: from terminal/ide
