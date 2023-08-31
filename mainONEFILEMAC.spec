@@ -4,11 +4,8 @@
 block_cipher = None
 
 
-import os
-print("cwd?", os.getcwd())
-
 a = Analysis(
-    ['main1.py'],
+    ['main.py'],
     pathex=[],
     binaries=[],
     datas=[("media", "media")],
