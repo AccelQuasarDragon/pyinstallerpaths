@@ -12,7 +12,7 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		change in pyinstaller: move pyinstaller to different directory
 		show pyinstaller specfile failing on different cwd
 		cwd DEPENDS on your terminal!
-		So on windows cwd is your exe
+		So on windows cwd is your exe on pyinstaller
 		On mac, it's the user folder
 		How MEIPASS relates to spec file, https://kivyschool.com/PyInstaller%20Instructions/#step-4b-add-your-kv-file-resources-hooks-and-hiddenimports
 #1.a: when making exe with pyinstaller, using specfile is DEPENDENT ON YOUR OS.GETCWD
@@ -33,6 +33,7 @@ TL:DR:
 	#1: from terminal/ide
 	#2: as exe from PyInstaller
 	You must be wary that os.getcwd changes in your terminal depending on your terminal cwd. In PyInstaller, os.getcwd changes BETWEEN Windows and Mac
+	on Windows it is your exe folder. On Mac it is your user folder.
 
 	There are FOUR locations to look in for a file:
 	#1: sys.path 
@@ -40,4 +41,4 @@ TL:DR:
 	#3: sys.executable
 	#4: sys._MEIPASS IF made with PyInstaller
 
-	If you want a decent solution, look through all 4 paths using rglob
+	If you want a decent solution, look through all 4 paths using rglob. If you want a fast solution, just add sys._MEIPASS to sys.path. But be careful! the _MEIPASS folder is a temp folder, and will not persist between runs.
