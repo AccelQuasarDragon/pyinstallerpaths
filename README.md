@@ -19,6 +19,10 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 | sys._MEIPASS   | does not exist                             | MEIxxxxx tempfolder                                                     | MEIxxxxx tempfolder                                                     |
 | `__file__`     | the location of the python file you invoke | the location of the python file you invoke with the exe in sys._MEIPASS | the location of the python file you invoke with the exe in sys._MEIPASS |
 
+### pyinstallerpaths (Youtube Link)
+
+[![Watch the video](https://img.youtube.com/vi/06RUBwcL9_k/maxresdefault.jpg)](https://www.youtube.com/watch?v=06RUBwcL9_k)
+
 ### 1: os.getcwd is different
 * In code: show os get cwd change depending on your terminal
 	* terminal run 1: in pyinstallerpaths
