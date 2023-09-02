@@ -18,7 +18,9 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		On mac, it's the user folder
 		How MEIPASS relates to spec file, https://kivyschool.com/PyInstaller%20Instructions/#step-4b-add-your-kv-file-resources-hooks-and-hiddenimports
 #1.a: when making exe with pyinstaller, your specfile is the cwd. Reminder that you can use full paths or construct a full path and give that to pyinstaller 
-   
+
+
+
 #2: so where should I look/how should I look?
 2 options:
 	ADD MEIPASS TO PATHS:
@@ -31,18 +33,15 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		https://docs.python.org/3/library/pathlib.html#pathlib.Path.rglob
 
 #3: do the same for Mac
-Mac specific problem: unix executable works for .app is prevented from looking at network folders
-new location: __file__
+Mac specific problem: unix executable works for .app is prevented from looking at network folders (since getcwd is /)
 
 what is bad: os.getcwd
-
 
 WHAT, getcwd on pyinstaller .app on mac is / which is the root folder
 but getcwd on pyinstaller which is a unix executable is user folder
 so u can't use getcwd on .app
 
-another location i forgot to mention is __file__
-
+One last note: __file__ and os.path.dirname(__file__)
 
 
 TL:DR:
