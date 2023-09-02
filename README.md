@@ -1,15 +1,15 @@
 # pyinstallerpaths
 Example of the INCREDIBLE amount of paths you have to think about on Win/Mac when using pyinstaller: os.getcwd, sys.path, sys.executable, sys._MEIPASS
 
-#0: go over the kivy code first
+#0: go over the kivy code first (show the mac update)
 
 #1: os.getcwd is different
 	In code: show os get cwd change depending on your terminal
-        run 1: in pyinstallerpaths
-        run 2: in lv1 folder
-	Executable might be python exe (depending where u run it)
+        terminal run 1: in pyinstallerpaths
+        terminal run 2: in lv1 folder
+	Executable is python exe from ternimal, and your exe if made with pyinstaller
 	In pyinstaller: 
-		change in pyinstaller: move pyinstaller to different directory
+		change in pyinstaller: move pyinstaller app to different directory
 		show pyinstaller specfile failing on different cwd
 			#1: show on lv1 failing
 			#2: show on pyinstallerpaths trying on lv1/mainONEFILE.spec (will still fail)
@@ -18,8 +18,6 @@ Example of the INCREDIBLE amount of paths you have to think about on Win/Mac whe
 		On mac, it's the user folder
 		How MEIPASS relates to spec file, https://kivyschool.com/PyInstaller%20Instructions/#step-4b-add-your-kv-file-resources-hooks-and-hiddenimports
 #1.a: when making exe with pyinstaller, your specfile is the cwd. Reminder that you can use full paths or construct a full path and give that to pyinstaller 
-
-
 
 #2: so where should I look/how should I look?
 2 options:
